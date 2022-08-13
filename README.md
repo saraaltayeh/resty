@@ -1,6 +1,7 @@
 # resty
 
-work on the RESTy API testing application
+1. work on the RESTy API testing application
+2. Retrieving User Input and Managing State
 
 ## UML diagram
 
