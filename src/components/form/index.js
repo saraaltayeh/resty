@@ -8,6 +8,7 @@ function Form(props) {
   const [method,setMethod]=useState('GET')
   const [url,setUrl]=useState('https://pokeapi.co/api/v2/pokemon')
   const [request, setRequest] = useState('');
+  const [TextArea,setTextArea] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -21,12 +22,19 @@ function Form(props) {
 
 const methodFunction = (e)=> {
   setMethod(e.target.id)
+  setTextArea(false);
 }
 const urlFunction = (e)=> {
   setUrl(e.target.value)
 }
 const requestFunction = (e)=> {
   setRequest(e.target.value)
+}
+
+function handleTextArea(e){
+  e.preventDefault()
+  setTextArea(true);
+  setMethod(e.target.id);  
 }
 
     return (
@@ -39,13 +47,16 @@ const requestFunction = (e)=> {
           </label>
           <label className="methods">
           <Badge bg="primary" id="get" onClick={methodFunction}>GET</Badge>
-            <span id="post" onClick={methodFunction}>POST</span>
-            <span id="put" onClick={methodFunction}>PUT</span>
+            <span id="post" onClick={handleTextArea}>POST</span>
+            <span id="put" onClick={handleTextArea}>PUT</span>
             <span id="delete" onClick={methodFunction}>DELETE</span>
           </label>
           <div>
         <label>Enter value : </label>
+        {
+          TextArea &&
         <textarea onChange={requestFunction} rows={5} cols={35}/>
+        }
       </div>
         </form>
       </>
