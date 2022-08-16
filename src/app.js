@@ -33,6 +33,10 @@ function App() {
     });
     }
     if (requestParams.method === 'post'){
+      // await axios.post(requestParams.url,requestParams.request).then((response)=>{
+        
+      //   setData([...data,response.request])
+      // })
 
       const addRecord = await fetch(requestParams.url, {
         method: 'POST',
@@ -47,7 +51,7 @@ function App() {
     }
       setRequestParams(requestParams)
     }
-
+  
     return (
       <>
       <Header />
