@@ -1,0 +1,9 @@
+#history{
+    /* width: 200px; */
+     /* height: 200px; */
+     /* border: 3px solid  rgb(192, 90, 170); */
+     /* min-height: 40px; */
+    /* max-width: 300px; */
+    overflow-y: scroll;
+    overflow-x:scroll;
+}
